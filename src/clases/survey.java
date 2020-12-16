@@ -11,6 +11,8 @@ package clases;
  */
 public class survey {
     
+    //Clase que recibe el puntaje de cada punto de la encuesta.
+    
     String service, solve, recommend;
 
     public survey(String service, String solve, String recommend) {

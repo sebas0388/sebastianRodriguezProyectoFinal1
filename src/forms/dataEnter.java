@@ -207,24 +207,31 @@ public class dataEnter extends javax.swing.JFrame {
     private void EnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterActionPerformed
         // TODO add your handling code here:
         
+        //Realiza las validaciones corrrespondientes, si hay error arroja un cartel, de lo contrario continua con el programa.
         validations vali1 = new validations();
         
         if (vali1.empty(name.getText())){
             if(vali1.empty(surname.getText())){
-                if(vali1.lenght(clientNum.getText())) {
-                
+                if(vali1.mayor(clientNum.getText())) {
+        
+        //Completa los datos del cliente.            
         client client1 = new client (name.getText(), surname.getText(), clientNum.getText());      
         
+        //Completa los valores de la encuesta.
         survey survey1 = new survey ( service.getText(), solve.getText(), recommend.getText());
-        
+                
         mean mean1 = new mean();
         
+        //Muestra en la siguiente ventana los datos del cliente.
         mean1.setInfo(client1.getName(), client1.getSurname(), client1.getClientNum());
-        mean1.prom(survey1.getService(), survey1.getSolve(), survey1.getRecommend());
         
+        //Realiza un promedio de la puntuacion ingresada.
+        mean1.prom(survey1.getService(), survey1.getSolve(), survey1.getRecommend());        
+                
         mean1.setVisible(true);
         this.dispose();    
         
+        //Sector en donde muestrar cartel de error en caso de que falte algun dato solicitado en la primer ventana.
               }else{
         JOptionPane.showMessageDialog(null, "INGRESE TODOS LOS DATOS", "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE );
                       }            
@@ -273,6 +280,7 @@ public class dataEnter extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new dataEnter().setVisible(true);
             }

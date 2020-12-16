@@ -17,12 +17,15 @@ public class mean extends javax.swing.JFrame {
     public mean() {
         initComponents();
     }
+    
+    //Carga la informacion del cliente.
      protected void setInfo(String name,String surname,String clientNum ){
        Name.setText(name.toUpperCase());
        Surname.setText(surname.toUpperCase());
        ClientNum.setText(clientNum);
             }
-     
+    
+    //Hace el promedio y carga el resultado. 
     protected void prom( String service, String solve, String recommend){
     
     int serv = Integer.parseInt(service);

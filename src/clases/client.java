@@ -13,6 +13,8 @@ import forms.dataEnter;
  */
 public class client extends dataEnter {
     
+    //Clase que recibe los datos del usuario que va a completar la encuesta.
+    
     String name, surname, clientNum;
 
     public client(String name, String surname, String clientNum) {

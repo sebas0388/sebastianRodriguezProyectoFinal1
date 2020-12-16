@@ -11,12 +11,13 @@ package clases;
  */
 public class validations {
 
+ //Clase donde estan todas las validaciones usadas para cada dato solicitado del cliente.   
     
 public validations() {
     }
     
     
-    
+//Valida que la palabra ingresa no sea vacia.    
 public boolean empty(String word) {
 
 if (!(word.isEmpty())) {
@@ -27,8 +28,8 @@ if (!(word.isEmpty())) {
        }
      }
     
-    
-public boolean lenght (String word){
+//El numero ingresado que es tomado como texto, lo pasa a entero y valida que sea mayor a cero y no este vacio.    
+public boolean mayor (String word){
     
     int number = Integer.parseInt(word);
     
